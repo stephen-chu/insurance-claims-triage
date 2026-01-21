@@ -1,0 +1,10 @@
+{
+  "claim_id": "CLM-2024-003",
+  "claimant": "Emily Rodriguez",
+  "policy_id": "POL-12345",
+  "incident_date": "2024-01-20",
+  "claim_type": "Theft",
+  "description": "Laptop and electronics stolen from vehicle.",
+  "estimated_damage": 2100,
+  "attachments": []
+}

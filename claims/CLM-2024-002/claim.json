@@ -1,0 +1,23 @@
+{
+  "claim_id": "CLM-2024-002",
+  "claimant": "Mike Chen",
+  "policy_id": "POL-76543",
+  "incident_date": "2024-01-18",
+  "claim_type": "Water Damage",
+  "description": "Burst pipe in basement caused flooding.",
+  "estimated_damage": 8200,
+  "attachments": [
+    {
+      "filename": "ceiling_damage.png",
+      "type": "photo"
+    },
+    {
+      "filename": "wall_damage.png",
+      "type": "photo"
+    },
+    {
+      "filename": "pipe_damage.png",
+      "type": "photo"
+    }
+  ]
+}

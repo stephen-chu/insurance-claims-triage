@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Results are generated
+results/*.json

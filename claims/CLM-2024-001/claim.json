@@ -1,0 +1,19 @@
+{
+  "claim_id": "CLM-2024-001",
+  "claimant": "Sarah Johnson",
+  "policy_id": "POL-89234",
+  "incident_date": "2024-01-15",
+  "claim_type": "Auto Collision",
+  "description": "Front-end collision at intersection. Other driver ran red light.",
+  "estimated_damage": 4500,
+  "attachments": [
+    {
+      "filename": "damage_front.png",
+      "type": "photo"
+    },
+    {
+      "filename": "damage_side.png",
+      "type": "photo"
+    }
+  ]
+}

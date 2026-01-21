@@ -1,0 +1,50 @@
+{
+  "Sarah Johnson": {
+    "customer_since": "2020-03-15",
+    "prior_claims": [
+      {
+        "claim_id": "CLM-2022-047",
+        "date": "2022-08-10",
+        "type": "Auto Collision",
+        "amount": 2300,
+        "status": "PAID"
+      }
+    ],
+    "fraud_score": 0.12,
+    "risk_flags": []
+  },
+  "Mike Chen": {
+    "customer_since": "2019-07-22",
+    "prior_claims": [],
+    "fraud_score": 0.05,
+    "risk_flags": []
+  },
+  "Emily Rodriguez": {
+    "customer_since": "2023-09-01",
+    "prior_claims": [
+      {
+        "claim_id": "CLM-2023-112",
+        "date": "2023-10-15",
+        "type": "Theft",
+        "amount": 800,
+        "status": "PAID"
+      },
+      {
+        "claim_id": "CLM-2023-156",
+        "date": "2023-11-20",
+        "type": "Theft",
+        "amount": 1200,
+        "status": "PAID"
+      },
+      {
+        "claim_id": "CLM-2023-189",
+        "date": "2023-12-08",
+        "type": "Property Damage",
+        "amount": 450,
+        "status": "UNDER_REVIEW"
+      }
+    ],
+    "fraud_score": 0.45,
+    "risk_flags": ["multiple_claims_short_period", "new_customer_high_frequency"]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "POL-89234": {
+    "holder": "Sarah Johnson",
+    "type": "Auto",
+    "status": "ACTIVE",
+    "effective_date": "2023-06-01",
+    "expiration_date": "2024-06-01",
+    "coverage": ["Auto Collision", "Comprehensive", "Liability"],
+    "deductible": 500,
+    "premium_current": true,
+    "max_coverage": 50000
+  },
+  "POL-76543": {
+    "holder": "Mike Chen",
+    "type": "Homeowners",
+    "status": "ACTIVE",
+    "effective_date": "2023-03-15",
+    "expiration_date": "2024-03-15",
+    "coverage": ["Property Damage", "Water Damage", "Fire", "Theft"],
+    "deductible": 1000,
+    "premium_current": true,
+    "max_coverage": 250000
+  },
+  "POL-12345": {
+    "holder": "Emily Rodriguez",
+    "type": "Renters",
+    "status": "ACTIVE",
+    "effective_date": "2023-09-01",
+    "expiration_date": "2024-09-01",
+    "coverage": ["Theft", "Property Damage", "Liability"],
+    "deductible": 250,
+    "premium_current": true,
+    "max_coverage": 30000
+  }
+}
