@@ -1,8 +1,8 @@
 {
   "$schema": "https://langchain-ai.github.io/langgraph/langgraph.schema.json",
   "graphs": {
-    "triage": "./graph.py:graph"
+    "triage": "./src/triage/graph.py:graph"
   },
   "env": ".env",
-  "dependencies": ["langchain>=0.3.0", "langchain-openai>=0.3.0", "langgraph>=0.2.0", "deepagents>=0.1.0", "python-dotenv>=1.0.0"]
+  "dependencies": ["./src", "langchain>=0.3.0", "langchain-openai>=0.3.0", "langgraph>=0.2.0", "deepagents>=0.1.0", "python-dotenv>=1.0.0"]
 }

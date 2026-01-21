@@ -3,10 +3,10 @@
 from deepagents import create_deep_agent
 from langchain_openai import ChatOpenAI
 
-from tools import TOOLS
-from subagents.damage_assessor import DAMAGE_ASSESSOR_SYSTEM_PROMPT, DAMAGE_ASSESSOR_TOOLS
-from subagents.fraud_detector import FRAUD_DETECTOR_SYSTEM_PROMPT, FRAUD_DETECTOR_TOOLS
-from subagents.policy_verifier import POLICY_VERIFIER_SYSTEM_PROMPT, POLICY_VERIFIER_TOOLS
+from triage.tools import TOOLS
+from triage.subagents.damage_assessor import DAMAGE_ASSESSOR_SYSTEM_PROMPT, DAMAGE_ASSESSOR_TOOLS
+from triage.subagents.fraud_detector import FRAUD_DETECTOR_SYSTEM_PROMPT, FRAUD_DETECTOR_TOOLS
+from triage.subagents.policy_verifier import POLICY_VERIFIER_SYSTEM_PROMPT, POLICY_VERIFIER_TOOLS
 
 SYSTEM_PROMPT = """Insurance claims triage agent.
 
