@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+.langgraph_api/
 
 # Results are generated
 results/*.json
