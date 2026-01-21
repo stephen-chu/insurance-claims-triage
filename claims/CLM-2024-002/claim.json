@@ -6,18 +6,9 @@
   "claim_type": "Water Damage",
   "description": "Burst pipe in basement caused flooding.",
   "estimated_damage": 8200,
-  "attachments": [
-    {
-      "filename": "ceiling_damage.png",
-      "type": "photo"
-    },
-    {
-      "filename": "wall_damage.png",
-      "type": "photo"
-    },
-    {
-      "filename": "pipe_damage.png",
-      "type": "photo"
-    }
+  "photos": [
+    "https://raw.githubusercontent.com/stephen-chu/insurance-claims-triage/main/claims/CLM-2024-002/ceiling_damage.png",
+    "https://raw.githubusercontent.com/stephen-chu/insurance-claims-triage/main/claims/CLM-2024-002/wall_damage.png",
+    "https://raw.githubusercontent.com/stephen-chu/insurance-claims-triage/main/claims/CLM-2024-002/pipe_damage.png"
   ]
 }

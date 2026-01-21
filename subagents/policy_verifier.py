@@ -12,6 +12,7 @@ def verify_coverage(
     claim_type: Annotated[str, "Type of claim"],
 ) -> str:
     """Check if policy covers the claim type."""
+    print(f"    [policy-verifier] Checking coverage for: {policy_id}")
     data = json.loads((DB / "policies.json").read_text()) if (DB / "policies.json").exists() else {}
     policy = data.get(policy_id)
 

@@ -6,14 +6,8 @@
   "claim_type": "Auto Collision",
   "description": "Front-end collision at intersection. Other driver ran red light.",
   "estimated_damage": 4500,
-  "attachments": [
-    {
-      "filename": "damage_front.png",
-      "type": "photo"
-    },
-    {
-      "filename": "damage_side.png",
-      "type": "photo"
-    }
+  "photos": [
+    "https://raw.githubusercontent.com/stephen-chu/insurance-claims-triage/main/claims/CLM-2024-001/damage_front.png",
+    "https://raw.githubusercontent.com/stephen-chu/insurance-claims-triage/main/claims/CLM-2024-001/damage_side.png"
   ]
 }

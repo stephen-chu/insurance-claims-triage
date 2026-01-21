@@ -9,6 +9,7 @@ DB = Path(__file__).parent.parent / "db"
 
 def check_history(claimant: Annotated[str, "Claimant name"]) -> str:
     """Check claimant's claim history and fraud indicators."""
+    print(f"    [fraud-detector] Checking history for: {claimant}")
     data = json.loads((DB / "claimants.json").read_text()) if (DB / "claimants.json").exists() else {}
     record = data.get(claimant)
 

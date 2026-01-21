@@ -39,7 +39,7 @@ def process_claim(agent, claim_id: str, claim_file: Path):
 
     start = time.time()
     config = {"configurable": {"thread_id": str(uuid.uuid4())}}
-    seen, shown_plan = set(), False
+    seen = set()
     final_decision = None
 
     # Initial invoke
@@ -55,13 +55,7 @@ def process_claim(agent, claim_id: str, claim_file: Path):
             if tid in seen:
                 continue
             seen.add(tid)
-            if name == "write_todos" and not shown_plan:
-                console.print("  [bold]Plan:[/bold]")
-                for todo in tc.get("args", {}).get("todos", []):
-                    content = todo.get('content', todo) if isinstance(todo, dict) else todo
-                    console.print(f"    - {content}")
-                shown_plan = True
-            elif name == "task":
+            if name == "task":
                 console.print(f"  [cyan]>[/cyan] {tc['args'].get('subagent_type')}")
 
     # Check for interrupt (HITL)
