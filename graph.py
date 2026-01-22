@@ -30,5 +30,10 @@ graph = create_deep_agent(
         {"name": "fraud-detector", "description": "Check fraud risk - needs claimant name", "system_prompt": FRAUD_DETECTOR_SYSTEM_PROMPT, "tools": FRAUD_DETECTOR_TOOLS, "model": "gpt-4o-mini"},
         {"name": "policy-verifier", "description": "Verify coverage - needs policy_id and claim_type", "system_prompt": POLICY_VERIFIER_SYSTEM_PROMPT, "tools": POLICY_VERIFIER_TOOLS, "model": "gpt-4o-mini"},
     ],
-    interrupt_on={"submit_decision": True},
+    interrupt_on={
+        "submit_decision": {
+            "allowed_decisions": ["approve", "edit", "reject"],
+            "description": lambda name, args: f"**Claim {args.get('claim_id')}**: {args.get('decision')}\n\nCoverage: {args.get('coverage')}\nFraud Risk: {args.get('fraud_risk')}\nDamage: ${args.get('damage_estimate')}\n\n{args.get('reason')}"
+        }
+    },
 )
