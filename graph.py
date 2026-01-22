@@ -20,17 +20,6 @@ SYSTEM_PROMPT = """You are an insurance claims triage agent. You receive a claim
    - MANUAL REVIEW: High fraud risk or edge cases"""
 
 
-def format_decision_description(name: str, args: dict) -> str:
-    """Format the interrupt description for submit_decision."""
-    return f"""**Claim {args.get('claim_id')}**: {args.get('decision')}
-
-Coverage: {args.get('coverage')}
-Fraud Risk: {args.get('fraud_risk')}
-Damage: ${args.get('damage_estimate')}
-
-{args.get('reason')}"""
-
-
 # Create the graph for LangGraph Cloud
 graph = create_deep_agent(
     model=ChatOpenAI(model="gpt-4o-mini", temperature=0),
@@ -41,10 +30,5 @@ graph = create_deep_agent(
         {"name": "fraud-detector", "description": "Check fraud risk - needs claimant name", "system_prompt": FRAUD_DETECTOR_SYSTEM_PROMPT, "tools": FRAUD_DETECTOR_TOOLS, "model": "gpt-4o-mini"},
         {"name": "policy-verifier", "description": "Verify coverage - needs policy_id and claim_type", "system_prompt": POLICY_VERIFIER_SYSTEM_PROMPT, "tools": POLICY_VERIFIER_TOOLS, "model": "gpt-4o-mini"},
     ],
-    interrupt_on={
-        "submit_decision": {
-            "allowed_decisions": ["approve", "edit", "reject"],
-            "description": format_decision_description,
-        }
-    },
+    interrupt_on={"submit_decision": True},
 )
