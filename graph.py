@@ -19,6 +19,18 @@ SYSTEM_PROMPT = """You are an insurance claims triage agent. You receive a claim
    - DENY: Not covered or policy issue
    - MANUAL REVIEW: High fraud risk or edge cases"""
 
+
+def format_decision_description(name: str, args: dict) -> str:
+    """Format the interrupt description for submit_decision."""
+    return f"""**Claim {args.get('claim_id')}**: {args.get('decision')}
+
+Coverage: {args.get('coverage')}
+Fraud Risk: {args.get('fraud_risk')}
+Damage: ${args.get('damage_estimate')}
+
+{args.get('reason')}"""
+
+
 # Create the graph for LangGraph Cloud
 graph = create_deep_agent(
     model=ChatOpenAI(model="gpt-4o-mini", temperature=0),
@@ -32,7 +44,7 @@ graph = create_deep_agent(
     interrupt_on={
         "submit_decision": {
             "allowed_decisions": ["approve", "edit", "reject"],
-            "description": lambda name, args: f"**Claim {args.get('claim_id')}**: {args.get('decision')}\n\nCoverage: {args.get('coverage')}\nFraud Risk: {args.get('fraud_risk')}\nDamage: ${args.get('damage_estimate')}\n\n{args.get('reason')}"
+            "description": format_decision_description,
         }
     },
 )
