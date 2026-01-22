@@ -10,6 +10,7 @@ def submit_decision(
     fraud_risk: Annotated[str, "Fraud risk level (low/high)"],
     damage_estimate: Annotated[int, "Estimated damage in dollars"],
     reason: Annotated[str, "One sentence explanation"],
+    photos: Annotated[list[str], "List of photo URLs from the claim"],
 ) -> str:
     """Submit the final triage decision for human review."""
     return f"Decision submitted for {claim_id}: {decision} - {reason}"
