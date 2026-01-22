@@ -10,8 +10,8 @@
         "status": "PAID"
       }
     ],
-    "fraud_score": 0.12,
-    "risk_flags": []
+    "fraud_score": 0.55,
+    "risk_flags": ["recent_policy_change"]
   },
   "Mike Chen": {
     "customer_since": "2019-07-22",

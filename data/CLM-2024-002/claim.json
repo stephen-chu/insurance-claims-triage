@@ -7,8 +7,8 @@
   "description": "Burst pipe in basement caused flooding.",
   "estimated_damage": 8200,
   "photos": [
-    "https://raw.githubusercontent.com/stephen-chu/insurance_claims_triage/main/claims/CLM-2024-002/ceiling_damage.png",
-    "https://raw.githubusercontent.com/stephen-chu/insurance_claims_triage/main/claims/CLM-2024-002/wall_damage.png",
-    "https://raw.githubusercontent.com/stephen-chu/insurance_claims_triage/main/claims/CLM-2024-002/pipe_damage.png"
+    "https://raw.githubusercontent.com/stephen-chu/insurance_claims_triage/main/data/CLM-2024-002/ceiling_damage.png",
+    "https://raw.githubusercontent.com/stephen-chu/insurance_claims_triage/main/data/CLM-2024-002/wall_damage.png",
+    "https://raw.githubusercontent.com/stephen-chu/insurance_claims_triage/main/data/CLM-2024-002/pipe_damage.png"
   ]
 }
