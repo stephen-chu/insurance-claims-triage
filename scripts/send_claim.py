@@ -9,12 +9,12 @@ from langgraph_sdk import get_sync_client
 # Your deployment URL
 DEPLOYMENT_URL = "https://insurance-claims-agent-1d71606fdb2e59c4b10c2d85d0ca197c.us.langgraph.app"
 
-CLAIMS_DIR = Path(__file__).parent / "claims"
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 
 def load_claim(claim_id: str) -> dict:
     """Load a claim from the claims directory."""
-    claim_path = CLAIMS_DIR / claim_id / "claim.json"
+    claim_path = DATA_DIR / claim_id / "claim.json"
     if not claim_path.exists():
         raise FileNotFoundError(f"Claim {claim_id} not found at {claim_path}")
     with open(claim_path) as f:
@@ -50,7 +50,7 @@ def send_claim(claim_id: str):
 def list_claims():
     """List available claims."""
     print("Available claims:")
-    for claim_dir in sorted(CLAIMS_DIR.iterdir()):
+    for claim_dir in sorted(DATA_DIR.iterdir()):
         if claim_dir.is_dir():
             claim_path = claim_dir / "claim.json"
             if claim_path.exists():

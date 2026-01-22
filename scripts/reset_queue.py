@@ -3,9 +3,7 @@
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).parent
-CLAIMS = ROOT / "claims"
-RESULTS = ROOT / "results"
+DATA = Path(__file__).parent.parent / "data"
 
 SAMPLE_CLAIMS = [
     {
@@ -48,16 +46,11 @@ SAMPLE_CLAIMS = [
 ]
 
 if __name__ == "__main__":
-    # Clear results
-    for f in RESULTS.glob("*.json"):
-        f.unlink()
-        print(f"Removed: {f.name}")
-
     # Write claim.json files
     for claim in SAMPLE_CLAIMS:
-        claim_dir = CLAIMS / claim["claim_id"]
+        claim_dir = DATA / claim["claim_id"]
         claim_dir.mkdir(parents=True, exist_ok=True)
         (claim_dir / "claim.json").write_text(json.dumps(claim, indent=2))
         print(f"Created: {claim['claim_id']}/claim.json")
 
-    print(f"\nReady: {len(SAMPLE_CLAIMS)} claims in {CLAIMS}")
+    print(f"\nReady: {len(SAMPLE_CLAIMS)} claims in {DATA}")

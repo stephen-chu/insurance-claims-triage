@@ -5,7 +5,7 @@ from pathlib import Path
 from openai import OpenAI
 
 client = OpenAI()  # Uses OPENAI_API_KEY env var
-CLAIMS = Path(__file__).parent / "claims"
+DATA = Path(__file__).parent.parent / "data"
 
 IMAGES = [
     ("CLM-2024-001", "damage_front.png",
@@ -42,7 +42,7 @@ if __name__ == "__main__":
         )
 
         image_data = base64.b64decode(response.data[0].b64_json)
-        path = CLAIMS / claim_id / filename
+        path = DATA / claim_id / filename
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(image_data)
         print(f"  Saved: {path}")
